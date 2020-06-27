@@ -3,7 +3,7 @@ import React,{useContext,useState}from 'react';
 import {TransactionContext} from './TransactionContext';
 
 function Child() {
-    let { transactions, addTransaction,delTransaction } = useContext(TransactionContext);
+    let { transactions, addTransaction,} = useContext(TransactionContext);
 
     let [newDesc, setDesc] = useState("");
     let [newAmount, setAmount] = useState(0);
@@ -32,8 +32,7 @@ const getIncome = () => {
     }
     return income;
 }
-const sign = transactions.amount > 0 ? '+' : '-';
-const transactionType = transactions.amount > 0 ? 'plus' : 'minus';
+
 
 const getExpense = () => {
     let expense = 0;
@@ -47,7 +46,7 @@ const getExpense = () => {
       <div className="background">
       <div className="container">
             <h2 className="text-center">
-                Expense Tracker <br/>By Hassan Ali
+                Expense Tracker <br/>By Hassan Ali Awan
             </h2>
             <h3>Your Balance <br/>${getIncome() + getExpense()}</h3>
     
